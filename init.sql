@@ -1,3 +1,5 @@
+USE cardinal_vocab;
+
 -- Create the games_vocab_stats table if it does not exist
 CREATE TABLE IF NOT EXISTS `games_vocab_stats` (
   `row_id` INT NOT NULL AUTO_INCREMENT,
@@ -24,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `games_vocab_stats` (
   `translation_kana_accepted_responses_hiragana` JSON DEFAULT NULL,
   `translation_kana_accepted_responses_katakana` JSON DEFAULT NULL,
   PRIMARY KEY (`row_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- Create the spaced_repetition_game_history_data table if it does not exist
 CREATE TABLE IF NOT EXISTS `spaced_repetition_game_history_data` (
@@ -40,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `spaced_repetition_game_history_data` (
   `user_response` VARCHAR(1000) DEFAULT NULL,
   `user_response_is_correct` TINYINT DEFAULT NULL,
   PRIMARY KEY (`row_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='contine i dati delle partite precedenti e correnti';
+);
 
 -- Create the spaced_repetition_game_history_stats table if it does not exist
 CREATE TABLE IF NOT EXISTS `spaced_repetition_game_history_stats` (
@@ -66,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `spaced_repetition_game_history_stats` (
   `points_given` int DEFAULT '0',
   `game_completed_confirmation` tinyint DEFAULT '0',
   PRIMARY KEY (`game_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='continene le statistiche delle partite precedenti e correnti'
+);
 
 -- Create the spaced_repetition_game_onomatopoeia_stats table if it does not exist
 CREATE TABLE IF NOT EXISTS `spaced_repetition_game_onomatopoeia_stats` (
@@ -81,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `spaced_repetition_game_onomatopoeia_stats` (
   `romaji_to_kana_responses_wrong` int DEFAULT '0',
   `repetitions` int DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the user_profiles table if it does not exist
 CREATE TABLE IF NOT EXISTS `user_profiles` (
@@ -99,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `points_vocabulary_verbs_add` int DEFAULT '0',
   `points_spaced_repetitions_plays` int DEFAULT '0',
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the user_settings table if it does not exist
 CREATE TABLE IF NOT EXISTS `user_settings` (
@@ -116,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `user_settings` (
   `spacedRepetition_countdownCorrectResponse` int DEFAULT '3000',
   `spacedRepetition_countdownWrongResponse` int DEFAULT '10000',
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the vocabulary_id_manager table if it does not exist
 CREATE TABLE IF NOT EXISTS `vocabulary_id_manager` (
@@ -134,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `vocabulary_id_manager` (
   `verbs_total_hiragana` int DEFAULT '0',
   `verbs_total_kanji` int DEFAULT '0',
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the vocabulary_id_vocab_type_mapping table if it does not exist
 CREATE TABLE IF NOT EXISTS `vocabulary_id_vocab_type_mapping` (
@@ -143,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `vocabulary_id_vocab_type_mapping` (
   `id` int DEFAULT NULL,
   `type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`row_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='list of all id created with the type selected (word/verb/adjective)'
+);
 
 -- Create the vocabulary_tags_mapping table if it does not exist
 CREATE TABLE IF NOT EXISTS `vocabulary_tags_mapping` (
@@ -153,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `vocabulary_tags_mapping` (
   `tag_words_count` int DEFAULT '0',
   `tag_verbs_count` int DEFAULT '0',
   PRIMARY KEY (`tag_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the vocabulary_verbs_list table if it does not exist
 CREATE TABLE IF NOT EXISTS `vocabulary_verbs_list` (
@@ -190,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `vocabulary_verbs_list` (
   `created_minute` int DEFAULT NULL,
   `created_second` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
 
 -- Create the vocabulary_words_list table if it does not exist
 CREATE TABLE IF NOT EXISTS `vocabulary_words_list` (
@@ -218,4 +220,4 @@ CREATE TABLE IF NOT EXISTS `vocabulary_words_list` (
   `created_minute` int DEFAULT NULL,
   `created_second` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+);
